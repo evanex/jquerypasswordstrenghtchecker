@@ -37,6 +37,7 @@ function resizeMe(){
    {
 
      tempvalue = 1;
+     var i;
      for ( i=value ; i>0 ;  i-- )
       {
          tempvalue *=  i ;
@@ -50,18 +51,17 @@ function resizeMe(){
  function secondsToString(seconds)
 {
 
+var color = '#97D700';
 
 if( seconds < 31536000 ){
-	var color = '#E50017';
+	 color = '#E50017';
 }else if( seconds < 315360000000){
-    var color = '#CB470F';
+     color = '#CB470F';
 }else if (seconds < 315360000000000 ){
-    var color = '#B18F07';
-}else{
-	var color = '#97D700';
- }
+     color = '#B18F07';
+}
 
-console.log(seconds+' '+color);
+//console.log(seconds+' '+color);
 
 $("body").clearQueue();
 $("body").animate({backgroundColor:  "-webkit-gradient(linear, left top, left bottom, from(#ccc), to("+color+"))" }, 'slow');
@@ -133,6 +133,7 @@ return "Instantly";
 
 		var permutations =0;
 
+		   var k;
 		   for ( k=1 ; k<password.length+1 ;  k++ )
 		     {
 		          permutations +=  GetFactorial(n )/GetFactorial( n -k)*GetFactorial( k);
